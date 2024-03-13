@@ -8,79 +8,33 @@ import {
     FlatList,
     ActivityIndicator,
     RefreshControl,
-    ToastAndroid,
     TextInput,
     Button,
-    ScrollView,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import NetInfo from '@react-native-community/netinfo';
-import db from '../database';
+import staffsData from '../staffs.js';
 import { theme } from '../theme';
+
 const StaffsScreen = () => {
     const [expandedStaffId, setExpandedStaffId] = useState(null);
     const [selectedButton, setSelectedButton] = useState({});
     const [staffs, setStaffs] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [isRefreshing, setIsRefreshing] = useState(false);
-    const [isConnected, setIsConnected] = useState(true);
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredStaffs, setFilteredStaffs] = useState([]);
 
     useEffect(() => {
-        const checkInternetConnection = async () => {
-            const { isConnected } = await NetInfo.fetch();
-            setIsConnected(isConnected);
-        };
-
-        checkInternetConnection();
-
-        loadData();
-
-        NetInfo.addEventListener(state => {
-            setIsConnected(state.isConnected);
-        });
-
-        return () => {
-            NetInfo.removeEventListener(state => {
-                setIsConnected(state.isConnected);
-            });
-        };
+        // Set staffs data from JSON
+        setStaffs(staffsData);
+        setFilteredStaffs(staffsData);
+        setIsLoading(false);
+        setIsRefreshing(false);
     }, []);
 
     useEffect(() => {
         filterStaffs(searchQuery);
     }, [searchQuery]);
-
-    const loadData = () => {
-        setIsRefreshing(true);
-        setIsLoading(true);
-
-        db.transaction(tx => {
-            tx.executeSql(
-                'SELECT * FROM staffs',
-                [],
-                (_, { rows }) => {
-                    const data = rows._array;
-                    setStaffs(data);
-                    setFilteredStaffs(data);
-                    setIsLoading(false);
-                    setIsRefreshing(false);
-                },
-                error => {
-                    console.error('Failed to fetch staffs:', error);
-                    setIsLoading(false);
-                    setIsRefreshing(false);
-                }
-            );
-        });
-
-        if (isConnected) {
-            ToastAndroid.show("You're connected!", ToastAndroid.SHORT);
-        } else {
-            ToastAndroid.show("You're not connected!", ToastAndroid.SHORT);
-        }
-    };
 
     const handleCardPress = staffId => {
         setExpandedStaffId(prevStaffId =>
@@ -97,10 +51,6 @@ const StaffsScreen = () => {
     };
 
     const renderStaffCard = ({ item }) => {
-        const handleImageError = () => {
-            ToastAndroid.show("Failed to load profile image", ToastAndroid.SHORT);
-        };
-
         return (
             <TouchableOpacity
                 style={[
@@ -111,9 +61,8 @@ const StaffsScreen = () => {
             >
                 <View style={styles.header}>
                     <Image
-                        source={{ uri: item.profileImage }}
+                        source={item.profileImage}
                         style={styles.profileImage}
-                        onError={handleImageError}
                     />
                     <View>
                         <Text style={styles.fullName}>{item.fullName}</Text>
@@ -206,11 +155,14 @@ const StaffsScreen = () => {
     };
 
     const handleRefresh = () => {
-        loadData();
+        // Refresh data
+        setStaffs(staffsData);
+        setFilteredStaffs(staffsData);
+        setIsRefreshing(false);
     };
 
     const filterStaffs = query => {
-        const filteredData = staffs.filter(
+        const filteredData = staffsData.filter(
             staff =>
                 staff.fullName.toLowerCase().includes(query.toLowerCase()) ||
                 staff.role.toLowerCase().includes(query.toLowerCase())
@@ -221,12 +173,6 @@ const StaffsScreen = () => {
 
     return (
         <View style={styles.container}>
-            {!isConnected && (
-                <View style={styles.networkContainer}>
-                    <Text style={styles.networkText}>No internet connection</Text>
-                </View>
-            )}
-
             <View style={styles.searchContainer}>
                 <TextInput
                     style={styles.searchInput}
@@ -379,15 +325,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: theme.textColor,
     },
-    networkContainer: {
-        backgroundColor: theme.networkColor,
-        paddingVertical: 8,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-    networkText: {
-        color: theme.secondaryColor,
-    },
     searchContainer: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -412,8 +349,6 @@ const styles = StyleSheet.create({
         color: 'white',
         fontWeight: 'bold',
     },
-
 });
-
 
 export default StaffsScreen;
