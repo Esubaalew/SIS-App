@@ -1,0 +1,45 @@
+[
+        {
+            "id": 1,
+            "fullName": "Teshome Alemu",
+            "role": "Lecturer",
+            "qualifications": "Ph.D. in Computer Science",
+            "specialist": "Information Systems",
+            "profileImage": "https://media.licdn.com/dms/image/D4D03AQEJaUKYWiBUgQ/profile-displayphoto-shrink_800_800/0/1664869486456?e=1692835200&v=beta&t=uHXTkkUqHRi3096_bE7xX7PIpj7XKSGwX5_SlOjSBC8",
+            "additionalInfo": "More than 16 years of experience in teaching, training, data,, research and app development.."
+        },
+        {
+            "id": 2,
+            "fullName": "Aminu Mohammod",
+            "role": "Lecture",
+            "qualifications": "M.Sc. in Information Technology",
+            "specialist": "Data Science",
+            "profileImage": "https://portal.aau.edu.et/ISIMSImg/Defaultimages.png",
+            "additionalInfo": ["I am a faculty at the School of Information Science (SIS), College of Natural and Computational Sciences, Addis Ababa University (AAU), experienced in university teaching, academic administration, research and development in the broad areas of information systems, data-driven solutions, digital transformation, machine-learning and AI, security & privacy, socio-technical systems, precision (digital) agriculture and more.",
+    
+                "I have had excellent opportunities to work with people of diverse background in a number of research projects in the intersection of information systems and socio-technical systems and digital societies. Over the years, I have developed wonderful skills in problem solving, communication and teamwork.",
+                "I am an optimist, result oriented, responsible and smart-working person capable of working both independently and in a team.",
+    
+                "My current research and development interests are in the areas of digital transformation, digital services, systems security and privacy, socio-technical systems, digital agriculture, data driven solutions, applied machine/deep learning, applied AI"]
+        },
+        {
+            "id": 3,
+            "fullName": "Tibebe Beshah",
+            "role": "Associate Professor",
+            "qualifications": "PhD. in Software Engineering",
+            "specialist": "Web Development",
+            "profileImage": "https://media.licdn.com/dms/image/C5603AQGOcummwdcWDA/profile-displayphoto-shrink_800_800/0/1516304285153?e=1692835200&v=beta&t=qBUtHkNNu9FKzPdJ-LsjkUiWreaP8sJ3lO9u0TPXhdY",
+            "additionalInfo":[ "I am an Associate  Professor  in Information Systems at the School of Information Science, Addis Ababa University, Addis Ababa, Ethiopia.",
+    
+                "My research interests includes: Data mining and Machine Learning, IS adoption and readiness, Information Security and Management, Information and Data Architecture, Information Systems Development, IS implementation Success."]
+        },
+        {
+            "id": 4,
+            "fullName": "Betsegaw Dereje",
+            "role": "Lecturer",
+            "qualifications": "M.Sc. Information Science",
+            "specialist": "Machine Learning",
+            "profileImage": "https://portal.aau.edu.et/ISIMSImg/Defaultimages.png",
+            "additionalInfo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        }
+        ]

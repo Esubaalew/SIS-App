@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView, ActivityIndicator } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
-import * as SQLite from 'expo-sqlite';
 import { useNavigation } from '@react-navigation/native';
 
-const db = SQLite.openDatabase('courses.db');
+// Import your courses data from a JSON file
+import coursesData from '../coursesData.json';
 
 const CoursesScreen = () => {
     const [years, setYears] = useState([]);
@@ -14,92 +14,24 @@ const CoursesScreen = () => {
     const [courses, setCourses] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
+
     useEffect(() => {
-        db.transaction((tx) => {
-
-            tx.executeSql(
-                'CREATE TABLE IF NOT EXISTS courses (id INTEGER PRIMARY KEY AUTOINCREMENT, year INT, semester INT, name TEXT, code TEXT, creditHours INT, description TEXT)'
-            );
-        });
-
-        // insertSampleData();
+        // Extract unique years and semesters from the imported courses data
+        const uniqueYears = [...new Set(coursesData.map(course => course.year.toString()))];
+        const uniqueSemesters = [...new Set(coursesData.map(course => course.semester.toString()))];
+        setYears(uniqueYears);
+        setSemesters(uniqueSemesters);
     }, []);
 
-    const insertSampleData = () => {
-        db.transaction((tx) => {
-            tx.executeSql(
-                'INSERT INTO courses (year, semester, name, code, creditHours, description) VALUES (?, ?, ?, ?, ?, ?)',
-                [4, 2, 'HISTORY OF ETHIOPIA AND THE HORN', 'HEH402', 3, 'This course covers the history of Ethiopia and the Horn of Africa.']
-            );
-            tx.executeSql(
-                'INSERT INTO courses (year, semester, name, code, creditHours, description) VALUES (?, ?, ?, ?, ?, ?)',
-                [4, 2, 'INTRODUCTION TO DATA SCIENCE AND ANALYTICS', 'IDSA402', 3, 'This course covers the fundamentals of data science and analytics.']
-            );
-            tx.executeSql(
-                'INSERT INTO courses (year, semester, name, code, creditHours, description) VALUES (?, ?, ?, ?, ?, ?)',
-                [4, 2, 'KNOWLEDGE MANAGEMENT', 'KM401', 3, 'This course covers the principles and techniques of knowledge management.']
-            );
-            tx.executeSql(
-                'INSERT INTO courses (year, semester, name, code, creditHours, description) VALUES (?, ?, ?, ?, ?, ?)',
-                [4, 2, 'MANAGEMENT OF INFORMATION SYSTEMS AND SERVICES', 'HCI401', 3, 'This course covers the management of information systems and services in organizations.']
-            );
-            tx.executeSql(
-                'INSERT INTO courses (year, semester, name, code, creditHours, description) VALUES (?, ?, ?, ?, ?, ?)',
-                [4, 2, 'ENTERPRISE SYSTEMS', 'ES402', 3, 'This course covers the design and implementation of enterprise systems.']
-            );
-            tx.executeSql(
-                'INSERT INTO courses (year, semester, name, code, creditHours, description) VALUES (?, ?, ?, ?, ?, ?)',
-                [4, 2, 'INDUSTRIAL PROJECT II', 'IP402', 3, 'This course is a continuation of Industrial Project I and involves the implementation and evaluation of the project.']
-            );
-        });
-    };
+    useEffect(() => {
+        // Filter courses based on selected year and semester
+        const filteredCourses = coursesData.filter(course =>
+            course.year.toString() === selectedYear && course.semester.toString() === selectedSemester
+        );
+        setCourses(filteredCourses);
+    }, [selectedYear, selectedSemester]);
 
-    const fetchYearsAndSemesters = () => {
-        db.transaction((tx) => {
-            tx.executeSql(
-                'SELECT DISTINCT year FROM courses',
-                [],
-                (_, { rows }) => {
-                    const years = rows._array.map((item) => item.year.toString());
-                    setYears(years);
-                },
-                (_, error) => {
-                    console.log('Error fetching years:', error);
-                }
-            );
-
-            tx.executeSql(
-                'SELECT DISTINCT semester FROM courses',
-                [],
-                (_, { rows }) => {
-                    const semesters = rows._array.map((item) => item.semester.toString());
-                    setSemesters(semesters);
-                },
-                (_, error) => {
-                    console.log('Error fetching semesters:', error);
-                }
-            );
-        });
-    };
-
-    const fetchCourses = () => {
-        db.transaction((tx) => {
-            setIsLoading(true);
-            tx.executeSql(
-                'SELECT * FROM courses WHERE year = ? AND semester = ?',
-                [selectedYear, selectedSemester],
-                (_, { rows }) => {
-                    const courses = rows._array;
-                    setCourses(courses);
-                    setIsLoading(false);
-                },
-                (_, error) => {
-                    console.log('Error fetching courses:', error);
-                    setIsLoading(false);
-                }
-            );
-        });
-    };
+    const navigation = useNavigation();
 
     const handleYearChange = (year) => {
         setSelectedYear(year);
@@ -109,19 +41,10 @@ const CoursesScreen = () => {
         setSelectedSemester(semester);
     };
 
-    useEffect(() => {
-        fetchYearsAndSemesters();
-    }, []);
-
-    useEffect(() => {
-        fetchCourses();
-    }, [selectedYear, selectedSemester]);
-
-    const navigation = useNavigation();
-
     const handleCourseSelect = (course) => {
         navigation.navigate('CourseDetails', { course });
     };
+
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Courses</Text>
@@ -151,7 +74,7 @@ const CoursesScreen = () => {
             </View>
 
             <ScrollView style={styles.coursesContainer}>
-                {isLoading ? (
+                {courses.length === 0 && isLoading ? (
                     <View style={styles.loadingContainer}>
                         <ActivityIndicator size="large" color="#0055FF" />
                         <Text style={styles.loadingText}>Getting courses...</Text>
@@ -169,6 +92,7 @@ const CoursesScreen = () => {
                     ))
                 )}
             </ScrollView>
+
         </View>
     );
 };

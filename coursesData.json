@@ -1,0 +1,474 @@
+[
+
+
+    {
+        "id": 3,
+        "year": 1,
+        "semester": 1,
+        "name": "Physical Fitness",
+        "code": "SpSc 1011",
+        "creditHours": 2,
+        "description": "This course focuses on physical fitness and health."
+    },
+    {
+        "id": 4,
+        "year": 1,
+        "semester": 1,
+        "name": "General Physics",
+        "code": "PHY 1011",
+        "creditHours": 3,
+        "description": "This course covers the basic principles of physics."
+    },
+    {
+        "id": 5,
+        "year": 1,
+        "semester": 1,
+        "name": "Mathematics for Natural Sciences",
+        "code": "Math 1011",
+        "creditHours": 3,
+        "description": "This course covers mathematics topics relevant to natural sciences."
+    },
+    {
+        "id": 6,
+        "year": 1,
+        "semester": 1,
+        "name": "Geography of Ethiopia and the Horn",
+        "code": "GEES 1011",
+        "creditHours": 3,
+        "description": "This course explores the geography of Ethiopia and the Horn region."
+    },
+    {
+        "id": 7,
+        "year": 1,
+        "semester": 1,
+        "name": "General Psychology",
+        "code": "Psyc 1011",
+        "creditHours": 3,
+        "description": "This course covers the fundamental concepts of psychology."
+    },
+    {
+        "id": 8,
+        "year": 1,
+        "semester": 1,
+        "name": "Communicative English Language Skills I",
+        "code": "FLEN 1011",
+        "creditHours": 3,
+        "description": "This course focuses on developing English language communication skills."
+    },
+    {
+        "id": 9,
+        "year": 1,
+        "semester": 1,
+        "name": "Critical Thinking",
+        "code": "LOCT 1011",
+        "creditHours": 3,
+        "description": "This course develops critical thinking skills."
+    },
+    {
+        "id": 10,
+        "year": 1,
+        "semester": 2,
+        "name": "Moral and Civic Education",
+        "code": "MCIE 1012",
+        "creditHours": 2.00,
+        "description": "This course covers moral and civic education topics."
+    },
+    {
+        "id": 11,
+        "year": 1,
+        "semester": 2,
+        "name": "Entrepreneurship",
+        "code": "MGMT1012",
+        "creditHours": 3.00,
+        "description": "This course explores the principles and practices of entrepreneurship."
+    },
+    {
+        "id": 12,
+        "year": 1,
+        "semester": 2,
+        "name": "Social Anthropology",
+        "code": "Anth1012",
+        "creditHours": 2.00,
+        "description": "This course covers the study of social and cultural behavior."
+    },
+    {
+        "id": 13,
+        "year": 1,
+        "semester": 2,
+        "name": "Communicative English Language Skill II",
+        "code": "FLEN 1012",
+        "creditHours": 3.00,
+        "description": "This course further develops English language communication skills."
+    },
+    {
+        "id": 14,
+        "year": 1,
+        "semester": 2,
+        "name": "Computer programming",
+        "code": "ECEg 1052",
+        "creditHours": 3.00,
+        "description": "This course introduces programming concepts and techniques."
+    },
+    {
+        "id": 15,
+        "year": 1,
+        "semester": 2,
+        "name": "Introduction to Emerging Technology",
+        "code": "Em Te1012",
+        "creditHours": 3.00,
+        "description": "This course provides an overview of emerging technologies."
+    },
+    {
+        "id": 16,
+        "year": 1,
+        "semester": 2,
+        "name": "Applied Mathematics I",
+        "code": "Math 1041",
+        "creditHours": 3.00,
+        "description": "This course applies mathematical concepts to real-world problems."
+    },
+    {
+        "id": 17,
+        "year": 2,
+        "semester": 1,
+        "name": "Foundations of Information Systems and Society",
+        "code": "InSy2013",
+        "creditHours": 4.00,
+        "description": "This course introduces the foundations of information systems and their societal impact."
+    },
+    {
+        "id": 18,
+        "year": 2,
+        "semester": 1,
+        "name": "Discrete Mathematics and Combinatory",
+        "code": "Math 2231",
+        "creditHours": 3.00,
+        "description": "This course covers discrete mathematics and combinatorial mathematics topics."
+    },
+    {
+        "id": 19,
+        "year": 2,
+        "semester": 1,
+        "name": "Principles of Accounting I",
+        "code": "AcFn1031",
+        "creditHours": 3.00,
+        "description": "This course introduces the basic principles of accounting."
+    },
+    {
+        "id": 20,
+        "year": 2,
+        "semester": 1,
+        "name": "Advanced Computer Programming",
+        "code": "INSY2021",
+        "creditHours": 3.00,
+        "description": "This course covers advanced topics in computer programming."
+    },
+    {
+        "id": 21,
+        "year": 2,
+        "semester": 1,
+        "name": "Introduction to Management",
+        "code": "MgMt 2062",
+        "creditHours": 3.00,
+        "description": "This course introduces fundamental concepts of management."
+    },
+    {
+        "id": 22,
+        "year": 2,
+        "semester": 1,
+        "name": "Fundamentals of Database Systems",
+        "code": "InSy 2041",
+        "creditHours": 2.00,
+        "description": "This course covers the fundamentals of database systems."
+    },
+    {
+        "id": 23,
+        "year": 2,
+        "semester": 2,
+        "name": "Introductory Statistics",
+        "code": "Stat 2161",
+        "creditHours": 3.00,
+        "description": "This course introduces basic statistical concepts and techniques."
+    },
+    {
+        "id": 24,
+        "year": 2,
+        "semester": 2,
+        "name": "Object-Oriented Programming",
+        "code": "INSY2042",
+        "creditHours": 3.00,
+        "description": "This course covers the principles of object-oriented programming."
+    },
+    {
+        "id": 25,
+        "year": 2,
+        "semester": 2,
+        "name": "Economics",
+        "code": "Econ1011",
+        "creditHours": 3.00,
+        "description": "This course covers basic economic principles."
+    },
+    {
+        "id": 26,
+        "year": 2,
+        "semester": 2,
+        "name": "Introduction to Information Storage and Retrieval",
+        "code": "INSY2033",
+        "creditHours": 3.00,
+        "description": "This course introduces concepts related to information storage and retrieval systems."
+    },
+    {
+        "id": 27,
+        "year": 2,
+        "semester": 2,
+        "name": "Data Structures and Algorithms",
+        "code": "INSY2041",
+        "creditHours": 3.00,
+        "description": "This course covers fundamental data structures and algorithms."
+    },
+    {
+        "id": 28,
+        "year": 2,
+        "semester": 2,
+        "name": "Advanced Database Systems",
+        "code": "INSY2032",
+        "creditHours": 3.00,
+        "description": "This course covers advanced topics in database systems."
+    },
+    {
+        "id": 29,
+        "year": 3,
+        "semester": 1,
+        "name": "Fundamentals of System Analysis and Design",
+        "code": "INSY3062",
+        "creditHours": 3.00,
+        "description": "This course covers the fundamental concepts of system analysis and design."
+    },
+    {
+        "id": 30,
+        "year": 3,
+        "semester": 1,
+        "name": "Introduction to Internet Programming",
+        "code": "INSY3081",
+        "creditHours": 3.00,
+        "description": "This course introduces internet programming concepts and techniques."
+    },
+    {
+        "id": 31,
+        "year": 3,
+        "semester": 1,
+        "name": "Event Driven Programming",
+        "code": "INSY2043",
+        "creditHours": 3.00,
+        "description": "This course covers event-driven programming paradigms and techniques."
+    },
+    {
+        "id": 32,
+        "year": 3,
+        "semester": 1,
+        "name": "Research Methods in Information Systems",
+        "code": "INSY3061",
+        "creditHours": 3.00,
+        "description": "This course covers research methods applicable to information systems."
+    },
+    {
+        "id": 33,
+        "year": 3,
+        "semester": 1,
+        "name": "Introduction to Systems & Networks",
+        "code": "INSY3071",
+        "creditHours": 3.00,
+        "description": "This course introduces systems and networks concepts and principles."
+    },
+    {
+        "id": 34,
+        "year": 3,
+        "semester": 1,
+        "name": "Computer Architecture & Operating Systems",
+        "code": "INSY2051",
+        "creditHours": 3.00,
+        "description": "This course covers computer architecture and operating systems fundamentals."
+    },
+    {
+        "id": 35,
+        "year": 3,
+        "semester": 2,
+        "name": "Administration of Systems & Networks",
+        "code": "INSY3072",
+        "creditHours": 3.00,
+        "description": "This course covers the administration and management of systems and networks."
+    },
+    {
+        "id": 36,
+        "year": 3,
+        "semester": 2,
+        "name": "E-Commerce",
+        "code": "INSY3084",
+        "creditHours": 3.00,
+        "description": "This course covers e-commerce concepts and practices."
+    },
+    {
+        "id": 37,
+        "year": 3,
+        "semester": 2,
+        "name": "Advanced Internet Programming",
+        "code": "INSY3082",
+        "creditHours": 3.00,
+        "description": "This course covers advanced topics in internet programming."
+    },
+    {
+        "id": 38,
+        "year": 3,
+        "semester": 2,
+        "name": "Mobile Computing",
+        "code": "INSY3083",
+        "creditHours": 3.00,
+        "description": "This course covers mobile computing concepts and technologies."
+    },
+    {
+        "id": 39,
+        "year": 3,
+        "semester": 2,
+        "name": "Information System Security",
+        "code": "INSY3073",
+        "creditHours": 0.00,
+        "description": "This course focuses on information system security principles and practices."
+    },
+    {
+        "id": 40,
+        "year": 3,
+        "semester": 2,
+        "name": "Object-Oriented System Analysis and Design",
+        "code": "INSY3063",
+        "creditHours": 3.00,
+        "description": "This course covers object-oriented system analysis and design methodologies."
+    },
+    
+    {
+        "id": 41,
+        "year": 4,
+        "semester": 1,
+        "name": "Introduction to Artificial Intelligence",
+        "code": "INSY4091",
+        "creditHours": 3.00,
+        "description": "This course provides an introduction to the principles and applications of artificial intelligence."
+    },
+    {
+        "id": 42,
+        "year": 4,
+        "semester": 1,
+        "name": "Inclusiveness",
+        "code": "SNIE 1012",
+        "creditHours": 2.00,
+        "description": "This course covers topics related to inclusiveness and diversity."
+    },
+    {
+        "id": 43,
+        "year": 4,
+        "semester": 1,
+        "name": "Industrial Project I",
+        "code": "INSY4121",
+        "creditHours": 3.00,
+        "description": "This course involves practical project work in an industrial setting."
+    },
+    {
+        "id": 44,
+        "year": 4,
+        "semester": 1,
+        "name": "Seminar in Information Systems",
+        "code": "INSY4123",
+        "creditHours": 2.00,
+        "description": "This course involves seminars on various topics in information systems."
+    },
+    {
+        "id": 45,
+        "year": 4,
+        "semester": 1,
+        "name": "Internship",
+        "code": "INSY4124",
+        "creditHours": 2.00,
+        "description": "This course provides practical work experience in an organizational setting."
+    },
+    {
+        "id": 46,
+        "year": 4,
+        "semester": 1,
+        "name": "Information Systems Project Management",
+        "code": "INSY4101",
+        "creditHours": 3.00,
+        "description": "This course covers project management principles and techniques specific to information systems projects."
+    },
+    {
+        "id": 47,
+        "year": 4,
+        "semester": 1,
+        "name": "Human-Computer Interaction",
+        "code": "INSY4111",
+        "creditHours": 3.00,
+        "description": "This course explores the interaction between humans and computers, focusing on usability and user experience."
+    },
+    {
+        "id": 48,
+        "year": 4,
+        "semester": 2,
+        "name": "Knowledge Management",
+        "code": "INSY4092",
+        "creditHours": 3.00,
+        "description": "This course covers the principles and techniques of knowledge management."
+    },
+    {
+        "id": 49,
+        "year": 4,
+        "semester": 2,
+        "name": "Industrial Project II",
+        "code": "INSY4122",
+        "creditHours": 3.00,
+        "description": "This course is a continuation of Industrial Project I and involves the implementation and evaluation of the project."
+    },
+    {
+        "id": 50,
+        "year": 4,
+        "semester": 2,
+        "name": "Global Trend",
+        "code": "GITr 1012",
+        "creditHours": 2.00,
+        "description": "This course explores global trends in various fields."
+    },
+    {
+        "id": 51,
+        "year": 4,
+        "semester": 2,
+        "name": "History of Ethiopia and the Horn",
+        "code": "Hist. 1012",
+        "creditHours": 3.00,
+        "description": "This course covers the history of Ethiopia and the Horn of Africa."
+    },
+    {
+        "id": 52,
+        "year": 4,
+        "semester": 2,
+        "name": "Introduction to Data Science & Analytics",
+        "code": "INSY4093",
+        "creditHours": 3.00,
+        "description": "This course covers the fundamentals of data science and analytics."
+    },
+    {
+        "id": 53,
+        "year": 4,
+        "semester": 2,
+        "name": "Enterprise Systems",
+        "code": "INSY4103",
+        "creditHours": 3.00,
+        "description": "This course covers the design and implementation of enterprise systems."
+    },
+    {
+        "id": 54,
+        "year": 4,
+        "semester": 2,
+        "name": "Management of Information Systems and Services",
+        "code": "INSY4102",
+        "creditHours": 3.00,
+        "description": "This course covers the management of information systems and services in organizations."
+    }
+
+]
